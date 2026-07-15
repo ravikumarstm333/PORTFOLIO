@@ -18,9 +18,6 @@ function Navbar({ setPage }) {
       </div>
 
       <div className="nav-center">
-
-        <h1>Ravi Kumar</h1>
-
         <div className="nav-links">
 
           <button onClick={() => setPage(0)}>Home</button>
