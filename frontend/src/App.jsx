@@ -1,12 +1,15 @@
 import Router from "./Router";
+import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import { useLocation } from "react-router-dom";
 import "./App.css";
 
 function App() {
+    const { pathname } = useLocation();
     return (
         <>
             <Navbar />
-            <Router />
+            {pathname === "/" ? <Home /> : <Router />}
         </>
     );
 }
