@@ -1,16 +1,72 @@
-.about{
+  #about {
+      background: var(--bg-alt);
+  }
 
-    width:100vw;
-    height:100vh;
+  .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+  }
 
-    background:url("../assets/vite.svg");
+  .about-heading {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 16px;
+  }
 
-    background-size:cover;
-    background-position:center;
+  .about-copy {
+      color: var(--muted);
+      font-size: 15.5px;
+      max-width: 420px;
+  }
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  .journey {
+      position: relative;
+      padding-left: 8px;
+  }
 
-    color:white;
-}
+  .j-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 18px;
+      padding-bottom: 36px;
+      position: relative;
+  }
+
+  .j-item:last-child {
+      padding-bottom: 0;
+  }
+
+  .j-item::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 34px;
+      bottom: -4px;
+      width: 2px;
+      background: var(--border);
+  }
+
+  .j-item:last-child::before {
+      display: none;
+  }
+
+  .j-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 14px;
+  }
+
+  .j-title {
+      font-weight: 600;
+      font-size: 16px;
+  }

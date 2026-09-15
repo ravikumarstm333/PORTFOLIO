@@ -1,16 +1,125 @@
-.projects{
+.project-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+}
 
-    width:100vw;
-    height:100vh;
+.project-row:first-of-type {
+    padding-top: 0;
+}
 
-    background:url("../assets/projects.jpg");
+.project-row.reverse {
+    grid-template-columns: 1fr 1fr;
+}
 
-    background-size:cover;
-    background-position:center;
+.project-row.reverse .p-media {
+    order: 2;
+}
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.project-row.reverse .p-body {
+    order: 1;
+}
 
-    color:white;
+.p-media {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.p-media img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s ease;
+}
+
+.project-row:hover .p-media img {
+    transform: scale(1.03);
+}
+
+.p-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    transition: transform .25s ease;
+}
+
+.project-row:hover .p-num {
+    transform: translateX(4px);
+}
+
+.p-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin-top: 8px;
+}
+
+.p-body h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+}
+
+.p-body p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+.p-status {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #16a34a;
+    background: #ecfdf3;
+    padding: 5px 12px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+}
+
+.tech-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-row span {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 5px 11px;
+    border-radius: 8px;
+    background: var(--bg-alt);
+}
+
+.p-links {
+    display: flex;
+    gap: 22px;
+}
+
+.p-links a {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.p-links a span {
+    transition: transform .2s ease;
+}
+
+.p-links a:hover span {
+    transform: translateX(3px);
 }

@@ -1,43 +1,33 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import profile from "../assets/vite.svg";
 
-function Navbar({ setPage }) {
+function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false);
 
-  return (
+    const closeMenu = () => setMenuOpen(false);
 
-    <nav className="navbar">
-
-      <div className="nav-left">
-
-        <img
-          src={profile}
-          className="profile-img"
-          alt=""
-        />
-
-      </div>
-
-      <div className="nav-center">
-        <div className="nav-links">
-
-          <button onClick={() => setPage(0)}>Home</button>
-
-          <button onClick={() => setPage(1)}>About</button>
-
-          <button onClick={() => setPage(2)}>Projects</button>
-
-          <button onClick={() => setPage(3)}>Certificates</button>
-
-          <button onClick={() => setPage(4)}>Contact</button>
-
-        </div>
-
-      </div>
-
-    </nav>
-
-  );
-
+    return (
+        <nav className={menuOpen ? "menu-open" : ""}>
+            <div className="logo">RAVI KUMAR</div>
+            <ul className="nav-links">
+                <li><NavLink to="/" end onClick={closeMenu}>Home</NavLink></li>
+                <li><NavLink to="/about" onClick={closeMenu}>About</NavLink></li>
+                <li><NavLink to="/skills" onClick={closeMenu}>Skills</NavLink></li>
+                <li><NavLink to="/projects" onClick={closeMenu}>Projects</NavLink></li>
+                <li><NavLink to="/certificates" onClick={closeMenu}>Certificates</NavLink></li>
+                <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
+            </ul>
+            <NavLink to="/contact" className="nav-cta" onClick={closeMenu}>Let's Talk →</NavLink>
+            <button
+                className="hamburger"
+                aria-label="Toggle menu"
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((open) => !open)}
+            >
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    );
 }
-
 export default Navbar;
