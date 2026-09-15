@@ -9,7 +9,7 @@ app.use(cors())
 const PORT = Number(process.env.PORT);
 
 app.get("/", (req, res) => {
-    res.join({
+    res.json({
         message: "Portfolio Backend API",
         status: "running"
     });
