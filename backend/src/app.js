@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import codingProblemRouter from ".Routes/codingproblem.js";
+import codingProblemRouter from "./Routes/codingproblem.js";
 import cors from 'cors'
 
 dotenv.config();
