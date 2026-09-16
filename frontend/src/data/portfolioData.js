@@ -1,11 +1,11 @@
-
+import heroimg from '../assets/hero.png'
 export const heroData = {
     badge: "AI / ML • ROBOTICS • IoT",
     title: "Hi, I'm Ravi Kumar.",
     titleLine: "I build intelligent systems that solve real-world problems.",
     description: "AI/ML Engineer focused on Machine Learning, Computer Vision, Software Development, Robotics and IoT.",
     resumeUrl: "#",
-    image: "src/assets/hero.png",
+    image: heroimg,
     imageAlt: "Hero portrait",
     labels: ["Machine Learning", "Computer Vision", "C++","Python","IoT Robotics"],
     socialLinks: {

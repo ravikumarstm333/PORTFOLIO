@@ -57,15 +57,15 @@ function Home() {
                     </div>
                     <div className="stat">
                         <div className="num">{stateData.projects}</div>
-                        <div className="lbl">Projects</div>
+                        <div className="lbl">PROJECTS</div>
                     </div>
                     <div className="stat">
                         <div className="num">{stateData.technologies}</div>
-                        <div className="lbl">Technologies</div>
+                        <div className="lbl">TECHNOLOGIES</div>
                     </div>
                     <div className="stat">
-                        <div className="num">{stateData?.leetcode?.total}</div>
-                        <div className="lbl">Coding Problems</div>
+                        <div className="num">{stateData?.leetcode?.total}+</div>
+                        <div className="lbl">CODING PROBLEMS</div>
                     </div>
                 </div>
             </section>
