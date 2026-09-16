@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 function Home() {
     const [leetcodeProblam,setLeetcodeProblam]=useState();
     useEffect(()=>{
-        fetch(`${import.meta.env.BASE_URL}/codingproblem/leetcode`)
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/codingproblem/leetcode`)
         .then(res=>{
             if(!res.ok){
                 throw new Error(`Http Error : ${res.status}`);
