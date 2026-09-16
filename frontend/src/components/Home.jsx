@@ -3,26 +3,26 @@ import Certificates from "./Certificates";
 import Contact from "./Contact";
 import Projects from "./Projects";
 import Skill from "./Skill";
-import { activityData, contactData, heroData } from "../data/portfolioData";
+import {contactData, heroData } from "../data/portfolioData";
 import { useEffect, useState } from "react";
 
 function Home() {
-    const [stateData,setStateData]=useState({});
-    useEffect(()=>{
+    const [stateData, setStateData] = useState({});
+    useEffect(() => {
         fetch(`${import.meta.env.VITE_API_BASE_URL}/state/data`)
-        .then(res=>{
-            if(!res.ok){
-                throw new Error(`Http Error : ${res.status}`);
-            }
-            return res.json();
-        })
-        .then(data=>{
-            setStateData(data);
-        })
-         .catch((error) => {
-            console.error("state-data Error:", error);
-        });
-    },[]);
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Http Error : ${res.status}`);
+                }
+                return res.json();
+            })
+            .then(data => {
+                setStateData(data);
+            })
+            .catch((error) => {
+                console.error("state-data Error:", error);
+            });
+    }, []);
     console.log(stateData);
     return (
         <main>
@@ -59,7 +59,7 @@ function Home() {
                         <div className="num">{stateData.projects}</div>
                         <div className="lbl">Projects</div>
                     </div>
-                     <div className="stat">
+                    <div className="stat">
                         <div className="num">{stateData.technologies}</div>
                         <div className="lbl">Technologies</div>
                     </div>
@@ -71,11 +71,15 @@ function Home() {
             </section>
 
             <Certificates />
-
-            <section id="activity"><span className="eyebrow">Developer Activity</span><h2 className="section-title">Where the hours go</h2><div className="activity-grid">{activityData.map((activity) => <div className="activity-card" key={activity.label}><div className="k">{activity.label}</div><div className="v">{activity.value}</div></div>)}</div></section>
-
             <Contact />
-            <footer><div>© 2026 Ravi Kumar — AI/ML • Robotics • IoT</div><div><a href={contactData.github} target="_blank" rel="noreferrer">GitHub</a><a href={contactData.linkedin} target="_blank" rel="noreferrer">LinkedIn</a><a href={`mailto:${contactData.email}`}>Email</a></div></footer>
+            <footer>
+                <div>© 2026 Ravi Kumar — AI/ML • Robotics • IoT</div>
+                <div>
+                    <a href={contactData.github} target="_blank" rel="noreferrer">GitHub</a>
+                    <a href={contactData.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href={`mailto:${contactData.email}`}>Email</a>
+                </div>
+            </footer>
         </main>
     );
 }

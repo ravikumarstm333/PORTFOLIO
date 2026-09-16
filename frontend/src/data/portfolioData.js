@@ -68,13 +68,6 @@ export const certificatesData = [
     { title: "Robotics Fundamentals", year: "2026", url: "#" },
 ];
 
-export const activityData = [
-    { label: "GITHUB", value: "120+ commits" },
-    { label: "LEETCODE GFG", value: "375+ solved" },
-    { label: "PROJECTS", value: "8 shipped" },
-    { label: "TECHNOLOGIES", value: "15+ learned" },
-];
-
 export const contactData = {
     email: "ravi@example.com",
     github: "https://github.com/ravikumar",
