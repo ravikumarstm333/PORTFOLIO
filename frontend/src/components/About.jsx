@@ -1,7 +1,7 @@
 import { journeyData } from "../data/portfolioData";
-
 function About() {
 	return (
+		<>
 		<section id="about">
 			<span className="eyebrow">My Journey</span>
 			<h2 className="section-title">Turning curiosity into technology.</h2>
@@ -17,6 +17,7 @@ function About() {
 				</div>
 			</div>
 		</section>
+		</>
 	);
 }
 

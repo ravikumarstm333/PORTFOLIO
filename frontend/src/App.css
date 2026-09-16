@@ -151,12 +151,8 @@ h2.section-title {
 }
 
 .hero-photo {
-  width: 280px;
-  height: 280px;
-  border-radius: 28px;
   overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 20px 50px rgba(20, 25, 40, .08);
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-photo img {

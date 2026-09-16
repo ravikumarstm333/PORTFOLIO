@@ -1,10 +1,7 @@
-import About from "./About";
-import Certificates from "./Certificates";
 import Contact from "./Contact";
-import Projects from "./Projects";
-import Skill from "./Skill";
-import {contactData, heroData } from "../data/portfolioData";
+import {heroData } from "../data/portfolioData";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 function Home() {
     const [stateData, setStateData] = useState({});
@@ -45,10 +42,6 @@ function Home() {
                 </div>
             </section>
 
-            <About />
-            <Skill />
-            <Projects />
-
             <section id="stats">
                 <div className="stats-row">
                     <div className="stat">
@@ -69,17 +62,8 @@ function Home() {
                     </div>
                 </div>
             </section>
-
-            <Certificates />
             <Contact />
-            <footer>
-                <div>© 2026 Ravi Kumar — AI/ML • Robotics • IoT</div>
-                <div>
-                    <a href={contactData.github} target="_blank" rel="noreferrer">GitHub</a>
-                    <a href={contactData.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-                    <a href={`mailto:${contactData.email}`}>Email</a>
-                </div>
-            </footer>
+            <Footer/>
         </main>
     );
 }

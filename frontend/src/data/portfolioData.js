@@ -1,4 +1,4 @@
-import heroimg from '../assets/hero.png'
+import heroimg from '../assets/robot.png'
 export const heroData = {
     badge: "AI / ML • ROBOTICS • IoT",
     title: "Hi, I'm Ravi Kumar.",
@@ -69,7 +69,7 @@ export const certificatesData = [
 ];
 
 export const contactData = {
-    email: "ravi@example.com",
-    github: "https://github.com/ravikumar",
+    email: "ravikumarstm333@gmail.com",
+    github: "https://github.com/",
     linkedin: "https://linkedin.com/in/ravikumar"
 };

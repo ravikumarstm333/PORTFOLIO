@@ -1,5 +1,7 @@
   #about {
-      background: var(--bg-alt);
+    background: var(--bg-alt);
+    margin: 0%;
+    padding: 0%;
   }
 
   .about-grid {
