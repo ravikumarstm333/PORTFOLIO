@@ -42,7 +42,10 @@ router.get("/leetcode", async (req, res) => {
             total: stats.find(item => item.difficulty === "All").count,
             easy: stats.find(item => item.difficulty === "Easy").count,
             medium: stats.find(item => item.difficulty === "Medium").count,
-            hard: stats.find(item => item.difficulty === "Hard").count
+            hard: stats.find(item => item.difficulty === "Hard").count,
+            CGPA:"8.9+",
+            Projects:"10+",
+            Technologies:"15+",
         };
         console.log(result)
         res.json(result);
