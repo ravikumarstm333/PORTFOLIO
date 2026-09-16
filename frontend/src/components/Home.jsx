@@ -3,13 +3,13 @@ import Certificates from "./Certificates";
 import Contact from "./Contact";
 import Projects from "./Projects";
 import Skill from "./Skill";
-import { activityData, contactData, heroData, statsData } from "../data/portfolioData";
+import { activityData, contactData, heroData } from "../data/portfolioData";
 import { useEffect, useState } from "react";
 
 function Home() {
-    const [leetcodeProblam,setLeetcodeProblam]=useState();
+    const [stateData,setStateData]=useState({});
     useEffect(()=>{
-        fetch(`${import.meta.env.VITE_API_BASE_URL}/codingproblem/leetcode`)
+        fetch(`${import.meta.env.VITE_API_BASE_URL}/state/data`)
         .then(res=>{
             if(!res.ok){
                 throw new Error(`Http Error : ${res.status}`);
@@ -17,13 +17,13 @@ function Home() {
             return res.json();
         })
         .then(data=>{
-            setLeetcodeProblam(data)
+            setStateData(data);
         })
          .catch((error) => {
-            console.error("LeetCode Error:", error);
+            console.error("state-data Error:", error);
         });
-    },[])
-    console.log(leetcodeProblam)
+    },[]);
+    console.log(stateData);
     return (
         <main>
             <section id="hero">
@@ -49,7 +49,26 @@ function Home() {
             <Skill />
             <Projects />
 
-            <section id="stats"><div className="stats-row">{statsData.map((stat) => <div className="stat" key={stat.label}><div className="num">{stat.value}</div><div className="lbl">{stat.label}</div></div>)}</div></section>
+            <section id="stats">
+                <div className="stats-row">
+                    <div className="stat">
+                        <div className="num">{stateData.cgpa}</div>
+                        <div className="lbl">CGPA</div>
+                    </div>
+                    <div className="stat">
+                        <div className="num">{stateData.projects}</div>
+                        <div className="lbl">Projects</div>
+                    </div>
+                     <div className="stat">
+                        <div className="num">{stateData.technologies}</div>
+                        <div className="lbl">Technologies</div>
+                    </div>
+                    <div className="stat">
+                        <div className="num">{stateData?.leetcode?.total}</div>
+                        <div className="lbl">Coding Problems</div>
+                    </div>
+                </div>
+            </section>
 
             <Certificates />
 

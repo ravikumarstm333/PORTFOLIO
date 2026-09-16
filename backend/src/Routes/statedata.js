@@ -2,7 +2,7 @@ import express from "express";
 
 const router = express.Router();
 
-router.get("/leetcode", async (req, res) => {
+router.get("/data", async (req, res) => {
     try {
         const query = `
             query getUserProfile($username: String!) {
@@ -33,19 +33,22 @@ router.get("/leetcode", async (req, res) => {
         });
 
         const data = await response.json();
-
         const stats =
             data.data.matchedUser.submitStatsGlobal.acSubmissionNum;
-
         const result = {
-            username: data.data.matchedUser.username,
-            total: stats.find(item => item.difficulty === "All").count,
-            easy: stats.find(item => item.difficulty === "Easy").count,
-            medium: stats.find(item => item.difficulty === "Medium").count,
-            hard: stats.find(item => item.difficulty === "Hard").count,
-            CGPA:"8.9+",
-            Projects:"10+",
-            Technologies:"15+",
+            leetcode:{
+                username: data.data.matchedUser.username,
+                total: stats.find(item => item.difficulty === "All").count,
+                easy: stats.find(item => item.difficulty === "Easy").count,
+                medium: stats.find(item => item.difficulty === "Medium").count,
+                hard: stats.find(item => item.difficulty === "Hard").count
+            },
+            geeksforgeeks:{
+                message:"comming soon"
+            },
+            cgpa:"8.9+",
+            projects:"10+",
+            technologies:"15+"
         };
         console.log(result)
         res.json(result);
@@ -57,13 +60,6 @@ router.get("/leetcode", async (req, res) => {
             error: error.message
         });
     }
-});
-
-
-router.get("/geeksforgeeks", (req, res) => {
-    res.json({
-        message: "GeeksforGeeks working"
-    });
 });
 
 

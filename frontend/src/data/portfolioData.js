@@ -61,13 +61,6 @@ export const projectsData = [
     },
 ];
 
-export const statsData = [
-    { value: "8.90", label: "CGPA" },
-    { value: "08+", label: "Projects" },
-    { value: "15+", label: "Technologies" },
-    { value: "150+", label: "Coding Problems" },
-];
-
 export const certificatesData = [
     { title: "Machine Learning Specialization", year: "2025", url: "#" },
     { title: "Deep Learning & CNNs", year: "2025", url: "#" },

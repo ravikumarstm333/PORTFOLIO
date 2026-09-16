@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import codingProblemRouter from "./Routes/codingproblem.js";
+import state from "./Routes/statedata.js";
 import cors from 'cors'
 
 dotenv.config();
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
     });
 });
 
-app.use("/codingproblem", codingProblemRouter);
+app.use("/state", state);
 
 app.listen(PORT, () => {
     console.log(`Running on ${PORT}`);
