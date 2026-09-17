@@ -1,17 +1,19 @@
 import heroimg from '../assets/robot.png'
 export const heroData = {
     badge: "AI / ML • ROBOTICS • IoT",
-    title: "Hi, I'm Ravi Kumar.",
-    titleLine: "I build intelligent systems that solve real-world problems.",
+    title: "Ravi Kumar.",
+    titleLine: "Build intelligent systems that solve real-world problems.",
     description: "AI/ML Engineer focused on Machine Learning, Computer Vision, Software Development, Robotics and IoT.",
     resumeUrl: "#",
     image: heroimg,
     imageAlt: "Hero portrait",
     labels: ["Machine Learning", "Computer Vision", "C++","Python","IoT Robotics"],
     socialLinks: {
-        github: "#",
-        linkedin: "#",
-        instagram: "#",
+        github: "https://github.com/ravikumarstm333",
+        linkedin: "https://www.linkedin.com/in/ravi-kumar-549342333",
+        instagram: "https://www.instagram.com/mr_ravisingh",
+        leetcode: "https://leetcode.com/u/ravikumarstm333",
+        geeksforgeeks: "https://www.geeksforgeeks.org/profile/ravikumauhjj"
     },
 };
 export const journeyData = [
@@ -70,6 +72,6 @@ export const certificatesData = [
 
 export const contactData = {
     email: "ravikumarstm333@gmail.com",
-    github: "https://github.com/",
-    linkedin: "https://linkedin.com/in/ravikumar"
+    github: "https://github.com/ravikumarstm333",
+    linkedin: "https://www.linkedin.com/in/ravi-kumar-549342333"
 };

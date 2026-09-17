@@ -1,7 +1,8 @@
 import Contact from "./Contact";
-import {heroData } from "../data/portfolioData";
+import { heroData } from "../data/portfolioData";
 import { useEffect, useState } from "react";
 import Footer from "./Footer";
+import raviimg from '../assets/ravi.png'
 
 function Home() {
     const [stateData, setStateData] = useState({});
@@ -20,19 +21,50 @@ function Home() {
                 console.error("state-data Error:", error);
             });
     }, []);
-    console.log(stateData);
     return (
         <main>
             <section id="hero">
                 <div className="hero-grid">
                     <div>
                         <span className="badge">{heroData.badge}</span>
-                        <h1 className="hero-heading">{heroData.title}<br />{heroData.titleLine}</h1>
+                        <h1 className="hero-heading">
+                            <img src={raviimg} alt="ravi-picture" />
+                            {heroData.title}<br />{heroData.titleLine}
+                        </h1>
                         <p className="hero-sub">{heroData.description}</p>
-                        <div className="hero-actions"><a href="#projects" className="btn btn-primary">View My Work</a><a href={heroData.resumeUrl} className="btn btn-ghost">Download Resume</a></div>
+                        <div className="hero-actions"><a href="/projects" className="btn btn-primary">View My Work</a><a href={heroData.resumeUrl} className="btn btn-ghost">Download Resume</a></div>
                         <div className="social-row">
-                            <a href={heroData.socialLinks.github} aria-label="GitHub" target="_blank" rel="noreferrer">GH</a>
-                            <a href={heroData.socialLinks.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer">in</a>
+                            <a href={heroData.socialLinks.github} aria-label="GitHub" target="_blank" rel="noreferrer">
+                                <i className="fa-brands fa-github"></i>
+                            </a>
+                            <a href={heroData.socialLinks.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                                <i className="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a
+                                href={heroData.socialLinks.instagram}
+                                aria-label="Instagram"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <i className="fa-brands fa-instagram"></i>
+                            </a>
+                            <a
+                                href={heroData.socialLinks.leetcode}
+                                aria-label="Leetcode"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <i className="fa-brands fa-leetcode"></i>
+                            </a>
+                            <a
+                                href={heroData.socialLinks.geeksforgeeks}
+                                aria-label="Geeksforgeeks"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                GFG
+                            </a>
+                            
                         </div>
                     </div>
                     <div className="hero-photo-wrap">
@@ -45,15 +77,15 @@ function Home() {
             <section id="stats">
                 <div className="stats-row">
                     <div className="stat">
-                        <div className="num">{stateData.cgpa}</div>
+                        <div className="num">{stateData.cgpa}+</div>
                         <div className="lbl">CGPA</div>
                     </div>
                     <div className="stat">
-                        <div className="num">{stateData.projects}</div>
+                        <div className="num">{stateData.projects}+</div>
                         <div className="lbl">PROJECTS</div>
                     </div>
                     <div className="stat">
-                        <div className="num">{stateData.technologies}</div>
+                        <div className="num">{stateData.technologies}+</div>
                         <div className="lbl">TECHNOLOGIES</div>
                     </div>
                     <div className="stat">
@@ -63,7 +95,7 @@ function Home() {
                 </div>
             </section>
             <Contact />
-            <Footer/>
+            <Footer />
         </main>
     );
 }

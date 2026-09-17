@@ -33,8 +33,7 @@ router.get("/data", async (req, res) => {
         });
 
         const data = await response.json();
-        const stats =
-            data.data.matchedUser.submitStatsGlobal.acSubmissionNum;
+        const stats =  data.data.matchedUser.submitStatsGlobal.acSubmissionNum;
         const result = {
             leetcode:{
                 username: data.data.matchedUser.username,
@@ -46,9 +45,9 @@ router.get("/data", async (req, res) => {
             geeksforgeeks:{
                 message:"comming soon"
             },
-            cgpa:"8.9+",
-            projects:"10+",
-            technologies:"15+"
+            cgpa:8.9,
+            projects:10,
+            technologies:15
         };
         console.log(result)
         res.json(result);
