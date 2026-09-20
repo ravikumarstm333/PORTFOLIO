@@ -1,13 +1,21 @@
 import heroimg from '../assets/robot.png'
 export const heroData = {
-    badge: "AI / ML • ROBOTICS • IoT",
+    badge: "AI / ML • COMPUTER VISION",
     title: "Ravi Kumar.",
-    titleLine: "Build intelligent systems that solve real-world problems.",
-    description: "AI/ML Engineer focused on Machine Learning, Computer Vision, Software Development, Robotics and IoT.",
+    titleLine: "Building intelligent systems for real-world problems.",
+    description:
+        "AI/ML developer building intelligent software, computer vision applications, and hardware-integrated IoT solutions.",
     resumeUrl: "#",
     image: heroimg,
-    imageAlt: "Hero portrait",
-    labels: ["Machine Learning", "Computer Vision", "C++","Python","IoT Robotics"],
+    imageAlt: "Ravi Kumar - AI/ML Developer",
+    labels: [
+        "Machine Learning",
+        "Computer Vision",
+        "Python",
+        "C++",
+        "IoT"
+    ],
+
     socialLinks: {
         github: "https://github.com/ravikumarstm333",
         linkedin: "https://www.linkedin.com/in/ravi-kumar-549342333",

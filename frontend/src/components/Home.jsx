@@ -67,6 +67,7 @@ function Home() {
                                 GFG
                             </a>
                             
+                            
                         </div>
                     </div>
                     <div className="hero-photo-wrap">
