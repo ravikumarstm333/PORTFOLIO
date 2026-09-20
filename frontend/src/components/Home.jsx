@@ -21,6 +21,8 @@ function Home() {
                 console.error("state-data Error:", error);
             });
     }, []);
+
+    console.log(typeof(stateData))
     return (
         <main>
             <section id="hero">
@@ -75,6 +77,7 @@ function Home() {
             </section>
 
             <section id="stats">
+                {Object.keys(stateData).length===0?<div id="stats-loading">Loading..</div>:
                 <div className="stats-row">
                     <div className="stat">
                         <div className="num">{stateData.cgpa}+</div>
@@ -92,7 +95,7 @@ function Home() {
                         <div className="num">{stateData?.leetcode?.total}+</div>
                         <div className="lbl">CODING PROBLEMS</div>
                     </div>
-                </div>
+                </div>}
             </section>
             <Contact />
             <Footer />

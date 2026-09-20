@@ -443,6 +443,13 @@ h2.section-title {
   flex: 1;
   min-width: 130px;
 }
+#stats-loading {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+}
 
 .stat .num {
   font-size: 38px;
