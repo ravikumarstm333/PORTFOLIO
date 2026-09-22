@@ -35,7 +35,7 @@ router.get("/data", async (req, res) => {
         if(!responsegfg.ok){
             throw new Error("GFG API request faild.");
         }
-        const gfgdata=responsegfg.json();
+        const gfgdata= await responsegfg.text();
         console.log("GFG data",gfgdata);
 
         const data = await response.json();
