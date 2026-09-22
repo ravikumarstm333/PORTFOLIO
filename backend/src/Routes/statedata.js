@@ -31,6 +31,12 @@ router.get("/data", async (req, res) => {
                 }
             })
         });
+        const responsegfg=await fetch("https://www.geeksforgeeks.org/profile/ravikumauhjj?tab=activity");
+        if(!responsegfg.ok){
+            throw new Error("GFG API request faild.");
+        }
+        const gfgdata=responsegfg.json();
+        console.log("GFG data",gfgdata);
 
         const data = await response.json();
         const stats =  data.data.matchedUser.submitStatsGlobal.acSubmissionNum;
