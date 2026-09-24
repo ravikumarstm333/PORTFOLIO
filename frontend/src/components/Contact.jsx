@@ -1,10 +1,34 @@
-import { useState } from "react";
+import { use, useState } from "react";
 import { contactData } from "../data/portfolioData";
 import "./Contact.css";
 
 function Contact() {
-    const [submitted, setSubmitted] = useState(false);
-
+    const [submitStattus,setSubmitStatus]=useState({
+        color:"green",
+        status:""
+    });
+    const [formData,setFormData]=useState({
+        name:"",
+        email:"",
+        message:""
+    })
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        const form=new FormData(e.target);
+        if(form.get("name")==="" || form.get("email") === "" || form.get("message")===""){
+            setSubmitStatus({
+                color:"red",
+                status:"fill ALL field"
+            })
+            return;
+        }
+        setFormData({
+            name:form.get("name"),
+            email:form.get("email"),
+            message:form.get("message")
+        })
+        
+    }
     return (
         <section id="contact">
             <div className="contact-grid">
@@ -37,22 +61,25 @@ function Contact() {
                     </div>
                 </div>
 
-                <form id="contactForm" onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }}>
+                <form id="contactForm" onSubmit={handleSubmit}>
                     <input
                         type="text"
                         placeholder="Your Name"
                         required
+                        name="name"
                     />
 
                     <input
                         type="email"
                         placeholder="Your Email"
                         required
+                        name="email"
                     />
 
                     <textarea
                         placeholder="Your Message"
                         required
+                        name="message"
                     ></textarea>
 
                     <button
@@ -63,7 +90,11 @@ function Contact() {
                         Send Message →
                     </button>
 
-                    <div className="form-out" id="formOut">{submitted ? "Message sent — I'll get back to you soon." : ""}</div>
+                    <div className="form-out" id="formOut"
+                    style={{
+                        color:submitStattus.color
+                    }}
+                    >{submitStattus.status}</div>
                 </form>
             </div>
         </section>

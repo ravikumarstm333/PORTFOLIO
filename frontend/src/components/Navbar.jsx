@@ -17,6 +17,9 @@ function Navbar() {
                 <li><NavLink to="/projects" onClick={closeMenu}>Projects</NavLink></li>
                 <li><NavLink to="/certificates" onClick={closeMenu}>Certificates</NavLink></li>
                 <li><NavLink to="/contact" onClick={closeMenu}>Contact</NavLink></li>
+                <li><NavLink to="/aget" onClick={closeMenu}
+                style={{color:"Blue"}}
+                >Ask my Agent..</NavLink></li>
             </ul>
             <NavLink to="/contact" className="nav-cta" onClick={closeMenu}>Let's Talk →</NavLink>
             <button
