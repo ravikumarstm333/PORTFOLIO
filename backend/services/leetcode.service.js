@@ -12,7 +12,6 @@ const getLeetCodeStats = async (username) => {
             }
         }
     `;
-
     const response = await fetch("https://leetcode.com/graphql", {
         method: "POST",
         headers: {
