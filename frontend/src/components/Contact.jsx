@@ -1,34 +1,46 @@
 import { use, useState } from "react";
 import { contactData } from "../data/portfolioData";
+import axios from "axios"
 import "./Contact.css";
 
 function Contact() {
-    const [submitStattus,setSubmitStatus]=useState({
-        color:"green",
-        status:""
+    const [submitStattus, setSubmitStatus] = useState({
+        color: "green",
+        status: ""
     });
-    const [formData,setFormData]=useState({
-        name:"",
-        email:"",
-        message:""
-    })
-    const handleSubmit=(e)=>{
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const form=new FormData(e.target);
-        if(form.get("name")==="" || form.get("email") === "" || form.get("message")===""){
-            setSubmitStatus({
-                color:"red",
-                status:"fill ALL field"
-            })
-            return;
+        try {
+            const form = new FormData(e.target);
+            const newMessage = {
+                name: form.get("name").trim(),
+                email: form.get("email").trim(),
+                message: form.get("message").trim()
+            };
+            const responce = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/contact/message`, newMessage);
+            if (responce.data.success) {
+                setSubmitStatus({
+                    color: "green",
+                    status: responce.data.message,
+                })
+                e.target.reset();
+            } else {
+                setSubmitStatus({
+                    color: "red",
+                    status: responce.data.message,
+                })
+            }
         }
-        setFormData({
-            name:form.get("name"),
-            email:form.get("email"),
-            message:form.get("message")
-        })
-        
+        catch (error) {
+            console.log(error);
+            setSubmitStatus({
+                color: "red",
+                status:"Something went wrong",
+            });
+        }
+
     }
+
     return (
         <section id="contact">
             <div className="contact-grid">
@@ -91,9 +103,9 @@ function Contact() {
                     </button>
 
                     <div className="form-out" id="formOut"
-                    style={{
-                        color:submitStattus.color
-                    }}
+                        style={{
+                            color: submitStattus.color
+                        }}
                     >{submitStattus.status}</div>
                 </form>
             </div>

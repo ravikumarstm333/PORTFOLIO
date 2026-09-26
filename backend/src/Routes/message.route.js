@@ -1,8 +1,32 @@
 import express from 'express'
-const router = express.Router();
-import fs from 'fs';
+import userMessage from '../model/user.moel.js';
 
-router.post("/me" ,(req,res)=>{
-    fs.readFile()
+
+const router = express.Router();
+
+router.post("/message" ,async (req,res)=>{
+    try{
+        const {name,email,message} = await req.body;
+
+        const newMessage = new userMessage({
+            name,email,message
+        });
+        console.log(newMessage)
+        await newMessage.save();
+        res.status(200).json({
+            success:true,
+            message:"Messgae sent Successfully"
+        });
+        console.log(newMessage);
+
+    }
+    catch(error){
+        res.status(500).json({
+            success:false,
+            message:error.message
+        });
+    }
+
+    
 })
 export default router;
