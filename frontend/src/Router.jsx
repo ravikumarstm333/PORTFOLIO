@@ -4,6 +4,7 @@ import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Skill from "./components/Skill";
+import Dashboard from "./Admin/Dashboard";
 
 function Router() {
     return (
@@ -14,6 +15,7 @@ function Router() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin/dashboard" element={<Dashboard/>}/>
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );

@@ -4,9 +4,13 @@ import Navbar from "./components/Navbar";
 import { useLocation } from "react-router-dom";
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Dashboard from "./Admin/Dashboard";
 
 function App() {
     const { pathname } = useLocation();
+    if (pathname === "/admin" || pathname.startsWith("/admin/" )) {
+        return <Dashboard />;
+    }
     return (
         <>
             <Navbar />
